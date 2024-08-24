@@ -11,6 +11,8 @@
 		"prepare": "test -d node_modules/husky && husky install || echo \"husky is not installed\""
 	},
 	"dependencies": {
+		"@headlessui/react": "^2.1.2",
+		"@heroicons/react": "^2.1.5",
 		"dayjs": "^1.11.13",
 		"next": "14.2.5",
 		"notion-client": "^6.16.0",
