@@ -6,7 +6,6 @@ import { NotionRenderer } from 'react-notion-x';
 import * as Ntypes from 'notion-types';
 import 'react-notion-x/src/styles.css';
 import 'prismjs/themes/prism-tomorrow.css';
-import Icon from '../icon.png';
 
 const Code = dynamic(() =>
 	import('react-notion-x/build/third-party/code').then((m) => m.Code),

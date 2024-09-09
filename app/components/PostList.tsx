@@ -1,32 +1,31 @@
-import { Post } from '../page';
-import Link from 'next/link';
-import Image from 'next/image';
-import nextSVG from '@/public/next.svg';
-const PostList = ({ posts }: { posts: Post[] }) => {
+import Post from './Post';
+const PostList = ({
+	posts,
+	postListLabel,
+}: {
+	posts: Post[];
+	postListLabel: string;
+}) => {
+	if (posts.length <= 0) {
+		return null;
+	}
 	return (
-		<div className='mb-4 flex flex-wrap justify-center gap-2'>
-			{posts.map((post) => (
-				<div
-					key={post.slug}
-					className='flex gap-2 flex-col justify-center items-start p-4 border min-w-48'
-				>
-					<div className='flex'>
-						<Link href={`blog/${post.slug}`}>
-							<Image
-								src={nextSVG}
-								alt={post.slug}
-								width={300}
-								height={150}
-							/>
-						</Link>
-					</div>
-					<p className='text-xl font-semibold text-black'>
-						<Link href={`blog/${post.slug}`}>{post.title}</Link>
-					</p>
-					<p className='text-base text-gray-500'>{post.description}</p>
-				</div>
-			))}
-		</div>
+		<>
+			<h3
+				id='#'
+				className=' text-gray-950 text-lg mt-8 mb-2 font-medium dark:text-gray-100'
+			>
+				{postListLabel}
+			</h3>
+			<section className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 justify-items-center mb-12'>
+				{posts.map((post) => (
+					<Post
+						key={post.slug}
+						post={post}
+					/>
+				))}
+			</section>
+		</>
 	);
 };
 export default PostList;

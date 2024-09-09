@@ -17,6 +17,7 @@ export default function RootLayout({
 		<html
 			lang='en'
 			suppressHydrationWarning={true}
+			className='bg-white dark:bg-gray-900'
 		>
 			<body
 				className=' antialiased'
